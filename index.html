@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IdeaProof — Validate Before You Build</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <!-- Animated mesh background -->
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+  </div>
+
+  <!-- =============================================
+       NAVBAR
+  ============================================= -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-inner">
+
+        <!-- Logo -->
+        <a href="#" class="logo" aria-label="IdeaProof home">
+          <span class="logo-dot" aria-hidden="true"></span>
+          IdeaProof
+        </a>
+
+        <!-- Nav links -->
+        <ul class="nav-links" role="list">
+          <li><a href="#how-it-works" class="hiw-nav-anchor">How It Works</a></li>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+
+        <!-- Right cluster -->
+        <div class="nav-right">
+          <!-- Theme switcher -->
+          <div class="theme-switcher" role="group" aria-label="Theme selection">
+            <button class="theme-btn active" data-theme-target="white" title="White" aria-pressed="true">☀️</button>
+            <button class="theme-btn" data-theme-target="cream" title="Cream" aria-pressed="false">🌾</button>
+            <button class="theme-btn" data-theme-target="dark" title="Dark" aria-pressed="false">🌙</button>
+          </div>
+
+          <a href="#" class="nav-cta" aria-label="Get started with IdeaProof">
+            Get Started
+          </a>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- =============================================
+       HERO SECTION
+  ============================================= -->
+  <section class="hero" aria-labelledby="hero-headline">
+    <div class="hero-inner">
+
+      <!-- LEFT SIDE -->
+      <div class="hero-left">
+
+        <div class="hero-tag">
+          <span class="hero-tag-dot" aria-hidden="true"></span>
+          For Student Founders
+        </div>
+
+        <h1 class="hero-headline" id="hero-headline">
+          Validate Your Startup Idea<br />
+          <em>Before You Build It.</em>
+        </h1>
+
+        <p class="hero-sub">
+          Get an instant idea strength score, uniqueness analysis across markets, and a structured action roadmap — all
+          powered by AI trained on thousands of startup outcomes.
+        </p>
+
+        <div class="hero-actions">
+          <a href="analyze.html" class="btn-primary" aria-label="Analyze your startup idea">
+            Analyze My Idea
+            <span class="btn-arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#" class="btn-ghost" aria-label="See how IdeaProof works">
+            See How It Works
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-proof" aria-label="Social proof">
+          <div class="proof-avatars" aria-hidden="true">
+            <div class="proof-avatar">🧑</div>
+            <div class="proof-avatar">👩</div>
+            <div class="proof-avatar">🧑‍💻</div>
+            <div class="proof-avatar">👨‍🎓</div>
+          </div>
+          <p class="proof-text">
+            <strong>2,400+ students</strong> validated their ideas this month
+          </p>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE — Floating Visual -->
+      <div class="hero-right" aria-hidden="true">
+        <div class="glow-orb"></div>
+
+        <!-- Card 1: Idea Score -->
+        <div class="glass-card card-score">
+          <div class="score-label">Idea Score</div>
+
+          <div class="score-ring-wrap">
+            <svg class="score-ring" viewBox="0 0 72 72">
+              <circle class="ring-bg" cx="36" cy="36" r="28" />
+              <circle class="ring-fill" cx="36" cy="36" r="28" />
+            </svg>
+            <div>
+              <div class="score-num">74<span>/100</span></div>
+              <div class="score-sub">Strong Potential</div>
+            </div>
+          </div>
+
+          <div class="score-bars">
+            <div class="score-bar-row">
+              <span class="score-bar-label">Market Fit</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width:82%"></div>
+              </div>
+              <span class="score-bar-val">82</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Uniqueness</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width:68%"></div>
+              </div>
+              <span class="score-bar-val">68</span>
+            </div>
+            <div class="score-bar-row">
+              <span class="score-bar-label">Feasibility</span>
+              <div class="score-bar-track">
+                <div class="score-bar-fill" style="width:75%"></div>
+              </div>
+              <span class="score-bar-val">75</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Uniqueness -->
+        <div class="glass-card card-unique">
+          <div class="card-unique-header">
+            <span class="card-unique-title">Uniqueness</span>
+            <span class="unique-badge">High</span>
+          </div>
+          <svg class="sparkline" viewBox="0 0 145 36" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="sparkGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="var(--accent)" stop-opacity="0.25" />
+                <stop offset="100%" stop-color="var(--accent)" stop-opacity="0" />
+              </linearGradient>
+            </defs>
+            <polygon class="sparkline-area" fill="url(#sparkGrad)"
+              points="0,32 18,28 36,22 54,26 72,14 90,18 108,8 126,12 145,6 145,36 0,36" />
+            <polyline points="0,32 18,28 36,22 54,26 72,14 90,18 108,8 126,12 145,6" />
+          </svg>
+          <div class="unique-footer">Outperforms <strong>73%</strong> of similar ideas</div>
+        </div>
+
+        <!-- Card 3: Action Roadmap -->
+        <div class="glass-card card-roadmap">
+          <div class="roadmap-title">Action Roadmap</div>
+          <div class="roadmap-steps">
+            <div class="roadmap-step">
+              <div class="step-line-wrap">
+                <span class="step-dot done"></span>
+                <span class="step-connector"></span>
+              </div>
+              <span class="step-text done-text">Define target user</span>
+            </div>
+            <div class="roadmap-step">
+              <div class="step-line-wrap">
+                <span class="step-dot done"></span>
+                <span class="step-connector"></span>
+              </div>
+              <span class="step-text done-text">Competitor analysis</span>
+            </div>
+            <div class="roadmap-step">
+              <div class="step-line-wrap">
+                <span class="step-dot active"></span>
+                <span class="step-connector"></span>
+              </div>
+              <span class="step-text">Build landing page MVP</span>
+            </div>
+            <div class="roadmap-step">
+              <div class="step-line-wrap">
+                <span class="step-dot pending"></span>
+              </div>
+              <span class="step-text" style="opacity:0.55">Run 20 user interviews</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: AI Insight -->
+        <div class="glass-card card-insight">
+          <div class="insight-row">
+            <div class="insight-icon">✦</div>
+            <div class="insight-content">
+              <div class="insight-label">AI Insight</div>
+              <div class="insight-text">Strong demand signal in EdTech vertical</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- / hero-right -->
+
+    </div>
+  </section>
+
+
+  <!-- HOW ITS WORK -->
+  <section id="how-it-works" class="hiw-section" aria-labelledby="hiw-title">
+    <div class="hiw-glow" aria-hidden="true"></div>
+  
+    <div class="hiw-container">
+  
+      <!-- Header -->
+      <div class="hiw-header">
+        <div class="hiw-eyebrow">
+          <span class="hiw-eyebrow-dash" aria-hidden="true"></span>
+          Process
+          <span class="hiw-eyebrow-dash" aria-hidden="true"></span>
+        </div>
+        <h2 class="hiw-title" id="hiw-title">How It <em>Works</em></h2>
+        <p class="hiw-subtitle">A structured path from idea to execution — in under five minutes.</p>
+      </div>
+  
+      <!-- Cards Track -->
+      <div class="hiw-track" role="list">
+  
+        <!-- Connector line -->
+        <div class="hiw-connector" aria-hidden="true">
+          <div class="hiw-connector-fill"></div>
+          <div class="hiw-connector-shimmer"></div>
+        </div>
+  
+        <!-- Step 01 -->
+        <article class="hiw-card hiw-card--1" role="listitem" data-step="1">
+          <div class="hiw-card-inner">
+            <div class="hiw-step-badge" aria-hidden="true">
+              <span class="hiw-step-badge-num">01</span>
+            </div>
+            <div class="hiw-card-icon" aria-hidden="true">✏️</div>
+            <h3 class="hiw-card-title">Describe Your Idea</h3>
+            <p class="hiw-card-desc">
+              Answer a short set of guided questions about your concept — your target users, the problem you're solving, and what sets it apart. No pitch deck required.
+            </p>
+            <div class="hiw-chips" aria-label="Input types">
+              <span class="hiw-chip">Problem statement</span>
+              <span class="hiw-chip">Target audience</span>
+              <span class="hiw-chip">Solution angle</span>
+            </div>
+            <div class="hiw-card-footer" aria-hidden="true">
+              <span class="hiw-footer-rule"></span>
+              Takes ~2 minutes
+            </div>
+          </div>
+        </article>
+  
+        <!-- Step 02 -->
+        <article class="hiw-card hiw-card--2" role="listitem" data-step="2">
+          <div class="hiw-card-inner">
+            <div class="hiw-step-badge" aria-hidden="true">
+              <span class="hiw-step-badge-num">02</span>
+            </div>
+            <div class="hiw-card-icon" aria-hidden="true">✦</div>
+            <h3 class="hiw-card-title">Get Your Strength & Uniqueness Score</h3>
+            <p class="hiw-card-desc">
+              Our AI cross-references thousands of startup outcomes to score your idea across viability, originality, and execution risk — broken into clear, readable dimensions.
+            </p>
+            <div class="hiw-chips" aria-label="Score dimensions">
+              <span class="hiw-chip">Market fit</span>
+              <span class="hiw-chip">Uniqueness index</span>
+              <span class="hiw-chip">Feasibility</span>
+            </div>
+            <div class="hiw-card-footer" aria-hidden="true">
+              <span class="hiw-footer-rule"></span>
+              Instant analysis
+            </div>
+          </div>
+        </article>
+  
+        <!-- Step 03 -->
+        <article class="hiw-card hiw-card--3" role="listitem" data-step="3">
+          <div class="hiw-card-inner">
+            <div class="hiw-step-badge" aria-hidden="true">
+              <span class="hiw-step-badge-num">03</span>
+            </div>
+            <div class="hiw-card-icon" aria-hidden="true">🗺️</div>
+            <h3 class="hiw-card-title">Receive Your Action Roadmap</h3>
+            <p class="hiw-card-desc">
+              Get a prioritised step-by-step validation plan — from landing page experiments and interview scripts to competitor gaps you can exploit immediately.
+            </p>
+            <div class="hiw-chips" aria-label="Roadmap outputs">
+              <span class="hiw-chip">Validation steps</span>
+              <span class="hiw-chip">Interview guide</span>
+              <span class="hiw-chip">Quick wins</span>
+            </div>
+            <div class="hiw-card-footer" aria-hidden="true">
+              <span class="hiw-footer-rule"></span>
+              Personalised output
+            </div>
+          </div>
+        </article>
+  
+      </div>
+      <!-- / hiw-track -->
+  
+      
+      <!-- Bottom callout -->
+      <div class="hiw-callout" aria-label="Start your validation">
+        <div class="hiw-callout-text">
+          <strong>Ready to find out if your idea has legs?</strong>
+          Join 2,400+ student founders who validated before building.
+        </div>
+        <a href="analyze.html" class="hiw-callout-btn" aria-label="Analyze your startup idea">
+          Analyze My Idea
+          <span class="hiw-callout-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+  
+    </div>
+  </section>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>

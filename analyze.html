@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyze Your Idea — IdeaProof</title>
+
+  <!-- Main CSS (same file used in index.html) -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts (if used in index.html) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Mesh background -->
+  <div class="az-mesh" aria-hidden="true">
+    <div class="az-mesh-blob"></div>
+    <div class="az-mesh-blob"></div>
+    <div class="az-mesh-blob"></div>
+  </div>
+
+  <!-- =============================================
+       TOPBAR
+  ============================================= -->
+  <header class="az-topbar">
+    <div class="az-topbar-inner">
+      <a href="index.html" class="az-logo">
+        <span class="az-logo-dot" aria-hidden="true"></span>
+        IdeaProof
+      </a>
+
+      <div class="az-topbar-right">
+        <div class="az-theme-sw" role="group" aria-label="Theme">
+          <button class="az-theme-btn active" data-theme-target="white" title="White" aria-pressed="true">☀️</button>
+          <button class="az-theme-btn" data-theme-target="cream" title="Cream" aria-pressed="false">🌾</button>
+          <button class="az-theme-btn" data-theme-target="dark" title="Dark" aria-pressed="false">🌙</button>
+        </div>
+        <a href="index.html" class="az-back" aria-label="Back to homepage">
+          ← Back
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============================================
+       PROGRESS BAR
+  ============================================= -->
+  <div class="az-progress-wrap" aria-label="Step progress">
+    <div class="az-progress-inner">
+      <div class="az-steps-labels" role="list">
+        <span class="az-step-label az-step-active" data-step-label="1">Idea Basics</span>
+        <span class="az-step-label" data-step-label="2">Describe</span>
+        <span class="az-step-label" data-step-label="3">Readiness</span>
+        <span class="az-step-label" data-step-label="4">Processing</span>
+        <span class="az-step-label" data-step-label="5">Results</span>
+      </div>
+      <div class="az-bar-track" role="progressbar" aria-valuemin="1" aria-valuemax="5" aria-valuenow="1">
+        <div class="az-bar-fill" id="az-bar-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =============================================
+       MAIN CONTENT
+  ============================================= -->
+  <main class="az-main" id="az-main">
+    <div class="az-content">
+
+      <!-- ==================== STEP 1 ==================== -->
+      <div class="az-step az-active" id="az-step-1">
+        <div class="az-step-head">
+          <div class="az-step-eyebrow">
+            <span class="az-step-eyebrow-dot" aria-hidden="true"></span>
+            Step 01 of 03
+          </div>
+          <h1 class="az-step-title">Idea <em>Basics</em></h1>
+          <p class="az-step-subtitle">A few quick questions to help us understand where you're starting from.</p>
+        </div>
+
+        <!-- Q1: Stage -->
+        <div class="az-question-block">
+          <div class="az-q-label">
+            <span class="az-q-num">1</span>
+            What stage is your idea at?
+          </div>
+          <div class="az-options" data-group="stage">
+            <div class="az-option" data-value="idea" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">💡</span>
+              <span class="az-option-label">Just an Idea</span>
+              <span class="az-option-sub">Concept stage, not yet explored</span>
+            </div>
+            <div class="az-option" data-value="mvp" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🛠️</span>
+              <span class="az-option-label">Building MVP</span>
+              <span class="az-option-sub">Already working on it</span>
+            </div>
+            <div class="az-option" data-value="launched" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🚀</span>
+              <span class="az-option-label">Launched</span>
+              <span class="az-option-sub">Live with real users</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q2: Competition -->
+        <div class="az-question-block">
+          <div class="az-q-label">
+            <span class="az-q-num">2</span>
+            Do similar solutions already exist?
+          </div>
+          <div class="az-options" data-group="competition">
+            <div class="az-option" data-value="many" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🏙️</span>
+              <span class="az-option-label">Many competitors</span>
+              <span class="az-option-sub">Crowded market</span>
+            </div>
+            <div class="az-option" data-value="few" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🌱</span>
+              <span class="az-option-label">A few exist</span>
+              <span class="az-option-sub">Emerging space</span>
+            </div>
+            <div class="az-option" data-value="none" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🔭</span>
+              <span class="az-option-label">Not sure</span>
+              <span class="az-option-sub">Haven't researched</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3: Demand confidence -->
+        <div class="az-question-block">
+          <div class="az-q-label">
+            <span class="az-q-num">3</span>
+            How confident are you there's real demand?
+          </div>
+          <div class="az-options" data-group="demand">
+            <div class="az-option" data-value="low" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🤔</span>
+              <span class="az-option-label">Low confidence</span>
+              <span class="az-option-sub">Gut feeling only</span>
+            </div>
+            <div class="az-option" data-value="medium" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">👀</span>
+              <span class="az-option-label">Moderate</span>
+              <span class="az-option-sub">Some signals seen</span>
+            </div>
+            <div class="az-option" data-value="high" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">✅</span>
+              <span class="az-option-label">High confidence</span>
+              <span class="az-option-sub">Validated with users</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q4: Target audience -->
+        <div class="az-question-block">
+          <div class="az-q-label">
+            <span class="az-q-num">4</span>
+            Is your target audience clearly defined?
+          </div>
+          <div class="az-options" data-group="audience">
+            <div class="az-option" data-value="yes" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🎯</span>
+              <span class="az-option-label">Yes, clearly</span>
+              <span class="az-option-sub">I know exactly who</span>
+            </div>
+            <div class="az-option" data-value="somewhat" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🗺️</span>
+              <span class="az-option-label">Somewhat</span>
+              <span class="az-option-sub">Broad idea</span>
+            </div>
+            <div class="az-option" data-value="no" tabindex="0" role="button" aria-pressed="false">
+              <span class="az-option-check" aria-hidden="true"></span>
+              <span class="az-option-icon">🌫️</span>
+              <span class="az-option-label">Not really</span>
+              <span class="az-option-sub">Still figuring out</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-nav-row">
+          <div></div>
+          <button class="az-btn-next" id="az-next-1" onclick="azGoTo(2)">
+            Continue
+            <span class="az-btn-next-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== STEP 2 ==================== -->
+      <div class="az-step" id="az-step-2">
+        <div class="az-step-head">
+          <div class="az-step-eyebrow">
+            <span class="az-step-eyebrow-dot" aria-hidden="true"></span>
+            Step 02 of 03
+          </div>
+          <h1 class="az-step-title"><em>Describe</em> Your Idea</h1>
+          <p class="az-step-subtitle">Give us enough context to score your idea accurately. Be as specific as you can.
+          </p>
+        </div>
+
+        <div class="az-describe-grid">
+          <!-- Main textarea -->
+          <div class="az-field-wrap">
+            <div class="az-field-label">
+              Full idea description
+              <span class="az-char-count" id="az-main-count">0 / 500</span>
+            </div>
+            <textarea class="az-textarea" id="az-main-desc" maxlength="500" rows="6"
+              placeholder="Describe your startup idea in detail. What does it do, who is it for, and how does it solve a real problem? E.g. 'A platform that helps college students validate startup ideas using AI before investing time building them...'"
+              aria-label="Full idea description"></textarea>
+            <p class="az-field-hint">Tip: The more specific you are, the more accurate your analysis will be.</p>
+          </div>
+
+          <!-- Small structured fields -->
+          <div class="az-small-fields">
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                Core problem you're solving
+                <span class="az-char-count" id="az-prob-count">0 / 120</span>
+              </div>
+              <input type="text" class="az-input" id="az-problem" maxlength="120"
+                placeholder="e.g. Students waste months building ideas with no demand" aria-label="Core problem" />
+            </div>
+
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                Target audience
+                <span class="az-char-count" id="az-aud-count">0 / 80</span>
+              </div>
+              <input type="text" class="az-input" id="az-audience" maxlength="80"
+                placeholder="e.g. College students with tech startup ideas" aria-label="Target audience" />
+            </div>
+
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                Your solution angle
+                <span class="az-char-count" id="az-sol-count">0 / 120</span>
+              </div>
+              <input type="text" class="az-input" id="az-solution" maxlength="120"
+                placeholder="e.g. AI scoring system trained on 10K startup outcomes" aria-label="Solution angle" />
+            </div>
+
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                Revenue model (optional)
+                <span class="az-char-count" id="az-rev-count">0 / 80</span>
+              </div>
+              <input type="text" class="az-input" id="az-revenue" maxlength="80"
+                placeholder="e.g. Freemium SaaS, $9/month pro plan" aria-label="Revenue model" />
+            </div>
+          </div>
+        </div>
+
+        <div class="az-nav-row">
+          <button class="az-btn-back" onclick="azGoTo(1)">← Back</button>
+          <button class="az-btn-next" id="az-next-2" onclick="azGoTo(3)">
+            Continue
+            <span class="az-btn-next-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== STEP 3 ==================== -->
+      <div class="az-step" id="az-step-3">
+        <div class="az-step-head">
+          <div class="az-step-eyebrow">
+            <span class="az-step-eyebrow-dot" aria-hidden="true"></span>
+            Step 03 of 03
+          </div>
+          <h1 class="az-step-title">Execution <em>Readiness</em></h1>
+          <p class="az-step-subtitle">Help us understand your capacity to execute — this shapes your personalised
+            roadmap.</p>
+        </div>
+
+        <div class="az-readiness-grid">
+          <!-- Time commitment -->
+          <div class="az-readiness-card">
+            <div class="az-readiness-label">
+              <span class="az-readiness-label-icon">⏱️</span>
+              Weekly time commitment
+            </div>
+            <div class="az-readiness-val" id="az-time-val">8 hours / week</div>
+            <div class="az-slider-wrap">
+              <input type="range" class="az-slider" id="az-time-slider" min="1" max="40" value="8" step="1"
+                aria-label="Weekly time commitment" aria-valuemin="1" aria-valuemax="40" aria-valuenow="8" />
+              <div class="az-slider-ticks">
+                <span class="az-slider-tick">1h</span>
+                <span class="az-slider-tick">10h</span>
+                <span class="az-slider-tick">20h</span>
+                <span class="az-slider-tick">30h</span>
+                <span class="az-slider-tick">40h</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Budget -->
+          <div class="az-readiness-card">
+            <div class="az-readiness-label">
+              <span class="az-readiness-label-icon">💰</span>
+              Available starting budget
+            </div>
+            <div class="az-budget-opts" data-group="budget">
+              <div class="az-budget-pill" data-value="0" tabindex="0" role="button">$0 — Bootstrap</div>
+              <div class="az-budget-pill" data-value="500" tabindex="0" role="button">Up to $500</div>
+              <div class="az-budget-pill" data-value="2000" tabindex="0" role="button">$500 – $2K</div>
+              <div class="az-budget-pill" data-value="5000" tabindex="0" role="button">$2K – $5K</div>
+              <div class="az-budget-pill" data-value="10000" tabindex="0" role="button">$5K+</div>
+            </div>
+          </div>
+
+          <!-- Toggles + Skill slider -->
+          <div class="az-readiness-2col">
+            <!-- Team availability -->
+            <div class="az-readiness-card">
+              <div class="az-readiness-label">
+                <span class="az-readiness-label-icon">👥</span>
+                Team availability
+              </div>
+              <div class="az-toggle-row" style="margin-top:12px;">
+                <div class="az-toggle-info">
+                  <div class="az-toggle-name" id="az-team-label">Solo founder</div>
+                  <div class="az-toggle-desc">Toggle to add co-founder</div>
+                </div>
+                <label class="az-toggle">
+                  <input type="checkbox" id="az-team-toggle" aria-label="Team availability" />
+                  <div class="az-toggle-track"></div>
+                  <div class="az-toggle-thumb"></div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Technical background -->
+            <div class="az-readiness-card">
+              <div class="az-readiness-label">
+                <span class="az-readiness-label-icon">🧑‍💻</span>
+                Technical skill level
+              </div>
+              <div class="az-readiness-val" id="az-skill-val">Mid-level</div>
+              <div class="az-slider-wrap">
+                <input type="range" class="az-slider" id="az-skill-slider" min="1" max="5" value="3" step="1"
+                  aria-label="Technical skill level" />
+                <div class="az-slider-ticks">
+                  <span class="az-slider-tick">None</span>
+                  <span class="az-slider-tick">Basic</span>
+                  <span class="az-slider-tick">Mid</span>
+                  <span class="az-slider-tick">Senior</span>
+                  <span class="az-slider-tick">Expert</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-nav-row">
+          <button class="az-btn-back" onclick="azGoTo(2)">← Back</button>
+          <button class="az-btn-next az-btn-analyze" id="az-analyze-btn" onclick="azAnalyzeClick()">
+            <svg class="az-btn-spinner" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-dasharray="32" stroke-dashoffset="32" />
+            </svg>
+            <span class="az-btn-analyze-text">Analyze My Idea</span>
+            <span class="az-btn-next-arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== STEP 4 — PROCESSING ==================== -->
+      <div class="az-step" id="az-step-4">
+        <div class="az-processing">
+          <div class="az-loader-wrap">
+            <svg class="az-loader-ring-svg" viewBox="0 0 120 120" aria-hidden="true">
+              <circle class="az-loader-ring-bg" cx="60" cy="60" r="50" />
+              <circle class="az-loader-ring-fill" cx="60" cy="60" r="50" id="az-loader-ring" />
+            </svg>
+            <div class="az-loader-center">
+              <span class="az-loader-pct" id="az-loader-pct">0%</span>
+            </div>
+          </div>
+
+          <h2 class="az-processing-title">Analyzing your idea</h2>
+          <p class="az-processing-status" id="az-proc-status">Initializing analysis engine…</p>
+
+          <div class="az-processing-steps" aria-live="polite">
+            <div class="az-proc-step" id="az-ps-1">
+              <div class="az-proc-icon">🔍</div>
+              <span class="az-proc-text">Analyzing problem clarity</span>
+              <span class="az-proc-dot"></span>
+            </div>
+            <div class="az-proc-step" id="az-ps-2">
+              <div class="az-proc-icon">✦</div>
+              <span class="az-proc-text">Checking uniqueness index</span>
+              <span class="az-proc-dot"></span>
+            </div>
+            <div class="az-proc-step" id="az-ps-3">
+              <div class="az-proc-icon">📊</div>
+              <span class="az-proc-text">Evaluating market fit</span>
+              <span class="az-proc-dot"></span>
+            </div>
+            <div class="az-proc-step" id="az-ps-4">
+              <div class="az-proc-icon">🗺️</div>
+              <span class="az-proc-text">Building action roadmap</span>
+              <span class="az-proc-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== STEP 5 — RESULTS ==================== -->
+      <div class="az-step" id="az-step-5">
+        <div class="az-step-head">
+          <div class="az-step-eyebrow">
+            <span class="az-step-eyebrow-dot" aria-hidden="true"></span>
+            Your Results
+          </div>
+          <h1 class="az-step-title">Idea <em>Analysis</em> Complete</h1>
+          <p class="az-step-subtitle">Here's your full startup idea breakdown and personalised action roadmap.</p>
+        </div>
+
+        <div class="az-results-grid">
+          <!-- Left column -->
+          <div class="az-results-left">
+            <!-- Strength score -->
+            <div class="az-glass-panel">
+              <div class="az-score-section">
+                <div class="az-score-ring-wrap">
+                  <svg class="az-score-svg" viewBox="0 0 150 150" aria-label="Startup Strength Score: 74 out of 100">
+                    <circle class="az-score-ring-bg" cx="75" cy="75" r="65" />
+                    <circle class="az-score-ring-fill" cx="75" cy="75" r="65" id="az-result-ring" />
+                  </svg>
+                  <div class="az-score-center">
+                    <span class="az-score-num" id="az-result-num">0</span>
+                    <span class="az-score-denom">/100</span>
+                  </div>
+                </div>
+                <div class="az-score-label">Strong Potential ✦</div>
+                <div class="az-score-desc">Your idea demonstrates real-world applicability with a compelling
+                  differentiation angle for the student founder market.</div>
+              </div>
+            </div>
+
+            <!-- Breakdown bars -->
+            <div class="az-glass-panel">
+              <div class="az-breakdown-title">Dimension Breakdown</div>
+              <div class="az-breakdown">
+                <div class="az-break-row">
+                  <div class="az-break-meta">
+                    <span class="az-break-name">Market Fit</span>
+                    <span class="az-break-val">82</span>
+                  </div>
+                  <div class="az-break-track">
+                    <div class="az-break-fill" style="width:82%" id="az-bar-market"></div>
+                  </div>
+                </div>
+                <div class="az-break-row">
+                  <div class="az-break-meta">
+                    <span class="az-break-name">Uniqueness Index</span>
+                    <span class="az-break-val">68</span>
+                  </div>
+                  <div class="az-break-track">
+                    <div class="az-break-fill" style="width:68%" id="az-bar-unique"></div>
+                  </div>
+                </div>
+                <div class="az-break-row">
+                  <div class="az-break-meta">
+                    <span class="az-break-name">Execution Feasibility</span>
+                    <span class="az-break-val">78</span>
+                  </div>
+                  <div class="az-break-track">
+                    <div class="az-break-fill" style="width:78%" id="az-bar-exec"></div>
+                  </div>
+                </div>
+                <div class="az-break-row">
+                  <div class="az-break-meta">
+                    <span class="az-break-name">Problem Clarity</span>
+                    <span class="az-break-val">85</span>
+                  </div>
+                  <div class="az-break-track">
+                    <div class="az-break-fill" style="width:85%" id="az-bar-prob"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right column -->
+          <div class="az-results-right">
+            <!-- Uniqueness score -->
+            <div class="az-glass-panel">
+              <div class="az-panel-title">Uniqueness Score</div>
+              <div class="az-unique-score">
+                <div class="az-unique-num" id="az-unique-num">0%</div>
+                <div class="az-unique-label">Outperforms 73% of similar startup ideas in this category</div>
+              </div>
+            </div>
+
+            <!-- Similar startups -->
+            <div class="az-glass-panel">
+              <div class="az-panel-title">Similar Startups to Watch</div>
+              <div class="az-comp-list">
+                <div class="az-comp-item">
+                  <div class="az-comp-logo">🦊</div>
+                  <div>
+                    <div class="az-comp-name">Validate.io</div>
+                    <div class="az-comp-overlap">Idea validation — 62% overlap</div>
+                  </div>
+                  <span class="az-comp-badge">Direct</span>
+                </div>
+                <div class="az-comp-item">
+                  <div class="az-comp-logo">🔬</div>
+                  <div>
+                    <div class="az-comp-name">StartupLens</div>
+                    <div class="az-comp-overlap">Market research tool — 41% overlap</div>
+                  </div>
+                  <span class="az-comp-badge">Indirect</span>
+                </div>
+                <div class="az-comp-item">
+                  <div class="az-comp-logo">🌱</div>
+                  <div>
+                    <div class="az-comp-name">IdeaSprout</div>
+                    <div class="az-comp-overlap">Student founder tools — 35% overlap</div>
+                  </div>
+                  <span class="az-comp-badge">Partial</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action roadmap -->
+            <div class="az-glass-panel">
+              <div class="az-panel-title">Your Action Roadmap</div>
+              <div class="az-roadmap-steps">
+                <div class="az-rm-step">
+                  <div class="az-rm-num">1</div>
+                  <div class="az-rm-text">
+                    <strong>Run 5 problem-discovery interviews</strong>
+                    Talk to students in your target group. Validate the pain before building anything.
+                  </div>
+                </div>
+                <div class="az-rm-step">
+                  <div class="az-rm-num">2</div>
+                  <div class="az-rm-text">
+                    <strong>Build a one-page landing with a waitlist</strong>
+                    Test demand signal with a simple value-proposition page and email capture.
+                  </div>
+                </div>
+                <div class="az-rm-step">
+                  <div class="az-rm-num">3</div>
+                  <div class="az-rm-text">
+                    <strong>Map 3 direct competitors in detail</strong>
+                    Study Validate.io's gaps. Find the angle they're missing for your specific niche.
+                  </div>
+                </div>
+                <div class="az-rm-step">
+                  <div class="az-rm-num">4</div>
+                  <div class="az-rm-text">
+                    <strong>Define your unfair advantage</strong>
+                    What do you know, access, or can build faster than anyone else? Lean in hard.
+                  </div>
+                </div>
+                <div class="az-rm-step">
+                  <div class="az-rm-num">5</div>
+                  <div class="az-rm-text">
+                    <strong>Ship a manual MVP in 2 weeks</strong>
+                    Do it manually (no code) to test willingness to pay before engineering time.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="az-nav-row">
+          <button class="az-btn-restart" onclick="azRestart()">↺ Analyze Another Idea</button>
+          <a href="index.html" class="az-btn-next" style="text-decoration:none;">
+            Back to Home
+            <span class="az-btn-next-arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+<script src="analyze.js"></script>
+
+</html>
