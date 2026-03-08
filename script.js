@@ -94,3 +94,85 @@
   
   })();
 
+// FEATURES PART
+(function () {
+  'use strict';
+
+  /* ── Scroll reveal ─────────────────────────── */
+  var section    = document.querySelector('.feat-section');
+  var intro      = document.querySelector('.feat-intro');
+  var cards      = document.querySelectorAll('.feat-card.feat-reveal');
+  var CARD_DELAY = 90; // ms stagger between each card
+
+  if (!section) return;
+
+  function revealItems() {
+    /* Intro first */
+    if (intro) {
+      intro.style.transitionDelay = '0ms';
+      intro.classList.add('feat-visible');
+    }
+
+    /* Cards staggered */
+    cards.forEach(function (card, i) {
+      card.style.transitionDelay = (i * CARD_DELAY + 120) + 'ms';
+      card.classList.add('feat-visible');
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(
+      function (entries) {
+        if (entries[0].isIntersecting) {
+          revealItems();
+          observer.unobserve(section);
+        }
+      },
+      { threshold: 0.10, rootMargin: '0px 0px -50px 0px' }
+    );
+    observer.observe(section);
+  } else {
+    revealItems();
+  }
+
+  /* ── Hover: glow tracks cursor inside card ─── */
+  cards.forEach(function (card) {
+    var glow = card.querySelector('.feat-card-glow');
+    if (!glow) return;
+
+    card.addEventListener('mousemove', function (e) {
+      var rect = card.getBoundingClientRect();
+      var x    = e.clientX - rect.left;
+      var y    = e.clientY - rect.top;
+      glow.style.transform =
+        'translate(' + (x - 100) + 'px, ' + (y - 100) + 'px) scale(1)';
+      glow.style.opacity   = '1';
+    });
+
+    card.addEventListener('mouseleave', function () {
+      glow.style.transform = 'translate(0,0) scale(0.6)';
+      glow.style.opacity   = '0';
+    });
+
+    /* Keyboard: treat focus-visible like hover */
+    card.addEventListener('focus', function () {
+      glow.style.transform = 'translate(0,0) scale(1)';
+      glow.style.opacity   = '1';
+    });
+
+    card.addEventListener('blur', function () {
+      glow.style.transform = 'translate(0,0) scale(0.6)';
+      glow.style.opacity   = '0';
+    });
+  });
+
+  /* ── Navbar anchor smooth scroll ──────────── */
+  var navLink = document.querySelector('a[href="#features"]');
+  if (navLink) {
+    navLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
+
+}());
