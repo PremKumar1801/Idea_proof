@@ -166,6 +166,7 @@
     });
   });
 
+  
   /* ── Navbar anchor smooth scroll ──────────── */
   var navLink = document.querySelector('a[href="#features"]');
   if (navLink) {
