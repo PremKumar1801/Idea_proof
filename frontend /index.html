@@ -37,8 +37,9 @@
         <!-- Nav links -->
         <ul class="nav-links" role="list">
           <li><a href="#how-it-works" class="hiw-nav-anchor">How It Works</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Pricing</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#founders">Founders</a></li>
+          <li><a href="#pricing">Pricing</a></li>
           <li><a href="#">Login</a></li>
         </ul>
 
@@ -51,7 +52,7 @@
             <button class="theme-btn" data-theme-target="dark" title="Dark" aria-pressed="false">🌙</button>
           </div>
 
-          <a href="#" class="nav-cta" aria-label="Get started with IdeaProof">
+          <a href="analyze.html" class="nav-cta" aria-label="Get started with IdeaProof">
             Get Started
           </a>
         </div>
@@ -89,8 +90,8 @@
             Analyze My Idea
             <span class="btn-arrow" aria-hidden="true">→</span>
           </a>
-          <a href="#" class="btn-ghost" aria-label="See how IdeaProof works">
-            See How It Works
+          <a href="build.html" class="btn-ghost" aria-label="See how IdeaProof works">
+            Build Together
             <span aria-hidden="true">↗</span>
           </a>
         </div>
@@ -514,6 +515,259 @@
       </article>
     </div>
     <!-- / feat-grid -->
+
+  </div>
+</section>
+
+
+<!-- / famous person -->
+
+<!-- =============================================
+     FOUNDERS SECTION — drop this inside your <body>
+     Requires: founders-section.css + founders-section.js
+     ============================================= -->
+
+<section class="founders-section" id="founders">
+
+  <!-- Eyebrow + Heading -->
+  <div class="founders-header">
+    <span class="founders-eyebrow">Visionary Minds</span>
+    <h2 class="founders-title">
+      Big Empires,<br>
+      <span class="founders-accent">Tiny Beginnings</span>
+    </h2>
+    <p class="founders-subtitle">
+      Every world-changing company was once a single bold idea.
+      Meet the founders who dared to dream small — and built something enormous.
+    </p>
+  </div>
+
+  <!-- Carousel Track -->
+  <div class="founders-stage" aria-label="Founders carousel">
+
+    <!-- Cards rendered by JS into .founders-track -->
+    <div class="founders-track" id="foundersTrack"></div>
+
+    <!-- Navigation Arrows -->
+    <button class="founders-nav founders-nav--prev" id="foundersPrev" aria-label="Previous founders">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="15 18 9 12 15 6"/>
+      </svg>
+    </button>
+    <button class="founders-nav founders-nav--next" id="foundersNext" aria-label="Next founders">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="9 18 15 12 9 6"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Dot Indicators -->
+  <div class="founders-dots" id="foundersDots" role="tablist" aria-label="Founder pages"></div>
+
+</section>
+
+
+
+<!-- / PRICING -->
+ <section id="pricing" class="pr-section" aria-labelledby="pr-title">
+
+  <!-- Ambient blobs -->
+  <div class="pr-ambient" aria-hidden="true">
+    <div class="pr-blob pr-blob--a"></div>
+    <div class="pr-blob pr-blob--b"></div>
+    <div class="pr-blob pr-blob--c"></div>
+  </div>
+
+  <div class="pr-container">
+
+    <!-- ── Section header ── -->
+    <div class="pr-intro pr-reveal">
+      <div class="pr-eyebrow">
+        <span class="pr-eyebrow-dash" aria-hidden="true"></span>
+        Pricing
+        <span class="pr-eyebrow-dash" aria-hidden="true"></span>
+      </div>
+      <h2 class="pr-heading" id="pr-title">
+        Simple Pricing for<br />
+        <em>Student Founders</em>
+      </h2>
+      <p class="pr-subheading">
+        Start validating your startup ideas for free and upgrade
+        as your ideas grow.
+      </p>
+    </div>
+
+    <!-- ── Toggle (Monthly only — decorative) ── -->
+    <div class="pr-toggle-row pr-reveal" aria-hidden="true">
+      <span class="pr-toggle-label pr-toggle-label--active">Monthly</span>
+      <div class="pr-toggle-track">
+        <div class="pr-toggle-thumb"></div>
+      </div>
+      <span class="pr-toggle-label">Annual</span>
+      <span class="pr-badge-save">Save 20%</span>
+    </div>
+
+    <!-- ── Cards grid ── -->
+    <div class="pr-grid" role="list">
+
+      <!-- ── Plan 1: Free ── -->
+      <article class="pr-card pr-reveal" role="listitem" tabindex="0"
+               aria-label="Free plan">
+        <div class="pr-card-glow" aria-hidden="true"></div>
+
+        <div class="pr-card-top">
+          <div class="pr-plan-name">Free</div>
+          <div class="pr-price-wrap">
+            <span class="pr-currency">$</span>
+            <span class="pr-price">0</span>
+          </div>
+          <p class="pr-plan-desc">
+            Perfect for students exploring startup ideas.
+          </p>
+        </div>
+
+        <ul class="pr-features" aria-label="Free plan features">
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Analyze up to 10 startup ideas
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Basic idea strength score
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Basic uniqueness check
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            AI idea insights
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Validation roadmap
+          </li>
+        </ul>
+
+        <a href="" class="pr-btn pr-btn--ghost"
+           aria-label="Start free plan">
+          Start Free
+          <span class="pr-btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <!-- ── Plan 2: Builder (Featured) ── -->
+      <article class="pr-card pr-card--featured pr-reveal" role="listitem"
+               tabindex="0" aria-label="Builder plan, recommended">
+        <div class="pr-card-glow" aria-hidden="true"></div>
+
+        <!-- Recommended ribbon -->
+        <div class="pr-ribbon" aria-label="Recommended plan">
+          <span class="pr-ribbon-dot" aria-hidden="true"></span>
+          Recommended
+        </div>
+
+        <!-- Top inner glow line -->
+        <div class="pr-feat-topline" aria-hidden="true"></div>
+
+        <div class="pr-card-top">
+          <div class="pr-plan-name">Builder</div>
+          <div class="pr-price-wrap">
+            <span class="pr-currency">$</span>
+            <span class="pr-price">1</span>
+            <span class="pr-period">/ mo</span>
+          </div>
+          <p class="pr-plan-desc">
+            Best for founders working with teammates.
+          </p>
+        </div>
+
+        <ul class="pr-features" aria-label="Builder plan features">
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Everything in Free
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Team collaboration
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Unlimited idea analysis
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Shared reports
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Save idea history
+          </li>
+        </ul>
+
+        <a href="" class="pr-btn pr-btn--primary"
+           aria-label="Upgrade to Builder plan">
+          Upgrade to Builder
+          <span class="pr-btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+      <!-- ── Plan 3: Pro ── -->
+      <article class="pr-card pr-reveal" role="listitem" tabindex="0"
+               aria-label="Pro plan">
+        <div class="pr-card-glow" aria-hidden="true"></div>
+
+        <div class="pr-card-top">
+          <div class="pr-plan-name">Pro</div>
+          <div class="pr-price-wrap">
+            <span class="pr-currency">$</span>
+            <span class="pr-price">5</span>
+            <span class="pr-period">/ mo</span>
+          </div>
+          <p class="pr-plan-desc">
+            For founders building serious startup projects.
+          </p>
+        </div>
+
+        <ul class="pr-features" aria-label="Pro plan features">
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Everything in Builder
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Advanced AI idea analysis
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Competitor discovery insights
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Exportable reports
+          </li>
+          <li class="pr-feature">
+            <span class="pr-feat-icon" aria-hidden="true"></span>
+            Priority features
+          </li>
+        </ul>
+
+        <a href="" class="pr-btn pr-btn--ghost"
+           aria-label="Go Pro plan">
+          Go Pro
+          <span class="pr-btn-arrow" aria-hidden="true">→</span>
+        </a>
+      </article>
+
+    </div>
+    <!-- /pr-grid -->
+
+    <!-- ── Footer note ── -->
+    <p class="pr-footnote pr-reveal">
+      No credit card required to start. Cancel anytime.
+      All student plans include a
+      <strong>14-day free trial</strong> of paid features.
+    </p>
 
   </div>
 </section>

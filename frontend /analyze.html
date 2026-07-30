@@ -15,6 +15,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap"
     rel="stylesheet" />
+  <!-- Tabler Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
 </head>
 
 <body>
@@ -424,7 +426,7 @@
         </div>
       </div>
 
-      <!-- ==================== STEP 5 — RESULTS ==================== -->
+     <!-- ==================== STEP 5 — RESULTS ==================== -->
       <div class="az-step" id="az-step-5">
         <div class="az-step-head">
           <div class="az-step-eyebrow">
@@ -435,158 +437,20 @@
           <p class="az-step-subtitle">Here's your full startup idea breakdown and personalised action roadmap.</p>
         </div>
 
-        <div class="az-results-grid">
-          <!-- Left column -->
-          <div class="az-results-left">
-            <!-- Strength score -->
-            <div class="az-glass-panel">
-              <div class="az-score-section">
-                <div class="az-score-ring-wrap">
-                  <svg class="az-score-svg" viewBox="0 0 150 150" aria-label="Startup Strength Score: 74 out of 100">
-                    <circle class="az-score-ring-bg" cx="75" cy="75" r="65" />
-                    <circle class="az-score-ring-fill" cx="75" cy="75" r="65" id="az-result-ring" />
-                  </svg>
-                  <div class="az-score-center">
-                    <span class="az-score-num" id="az-result-num">0</span>
-                    <span class="az-score-denom">/100</span>
-                  </div>
-                </div>
-                <div class="az-score-label">Strong Potential ✦</div>
-                <div class="az-score-desc">Your idea demonstrates real-world applicability with a compelling
-                  differentiation angle for the student founder market.</div>
-              </div>
-            </div>
+        <!-- Score Section -->
+        <div id="score-section" class="az-score-hero"></div>
 
-            <!-- Breakdown bars -->
-            <div class="az-glass-panel">
-              <div class="az-breakdown-title">Dimension Breakdown</div>
-              <div class="az-breakdown">
-                <div class="az-break-row">
-                  <div class="az-break-meta">
-                    <span class="az-break-name">Market Fit</span>
-                    <span class="az-break-val">82</span>
-                  </div>
-                  <div class="az-break-track">
-                    <div class="az-break-fill" style="width:82%" id="az-bar-market"></div>
-                  </div>
-                </div>
-                <div class="az-break-row">
-                  <div class="az-break-meta">
-                    <span class="az-break-name">Uniqueness Index</span>
-                    <span class="az-break-val">68</span>
-                  </div>
-                  <div class="az-break-track">
-                    <div class="az-break-fill" style="width:68%" id="az-bar-unique"></div>
-                  </div>
-                </div>
-                <div class="az-break-row">
-                  <div class="az-break-meta">
-                    <span class="az-break-name">Execution Feasibility</span>
-                    <span class="az-break-val">78</span>
-                  </div>
-                  <div class="az-break-track">
-                    <div class="az-break-fill" style="width:78%" id="az-bar-exec"></div>
-                  </div>
-                </div>
-                <div class="az-break-row">
-                  <div class="az-break-meta">
-                    <span class="az-break-name">Problem Clarity</span>
-                    <span class="az-break-val">85</span>
-                  </div>
-                  <div class="az-break-track">
-                    <div class="az-break-fill" style="width:85%" id="az-bar-prob"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Meters Section -->
+        <div id="meters-section" class="az-meters-section"></div>
 
-          <!-- Right column -->
-          <div class="az-results-right">
-            <!-- Uniqueness score -->
-            <div class="az-glass-panel">
-              <div class="az-panel-title">Uniqueness Score</div>
-              <div class="az-unique-score">
-                <div class="az-unique-num" id="az-unique-num">0%</div>
-                <div class="az-unique-label">Outperforms 73% of similar startup ideas in this category</div>
-              </div>
-            </div>
+        <!-- Results Cards -->
+        <div id="results-container" class="az-results-cards"></div>
 
-            <!-- Similar startups -->
-            <div class="az-glass-panel">
-              <div class="az-panel-title">Similar Startups to Watch</div>
-              <div class="az-comp-list">
-                <div class="az-comp-item">
-                  <div class="az-comp-logo">🦊</div>
-                  <div>
-                    <div class="az-comp-name">Validate.io</div>
-                    <div class="az-comp-overlap">Idea validation — 62% overlap</div>
-                  </div>
-                  <span class="az-comp-badge">Direct</span>
-                </div>
-                <div class="az-comp-item">
-                  <div class="az-comp-logo">🔬</div>
-                  <div>
-                    <div class="az-comp-name">StartupLens</div>
-                    <div class="az-comp-overlap">Market research tool — 41% overlap</div>
-                  </div>
-                  <span class="az-comp-badge">Indirect</span>
-                </div>
-                <div class="az-comp-item">
-                  <div class="az-comp-logo">🌱</div>
-                  <div>
-                    <div class="az-comp-name">IdeaSprout</div>
-                    <div class="az-comp-overlap">Student founder tools — 35% overlap</div>
-                  </div>
-                  <span class="az-comp-badge">Partial</span>
-                </div>
-              </div>
-            </div>
+        <!-- Roadmap Section -->
+        <div id="roadmap-section" class="az-roadmap-timeline"></div>
 
-            <!-- Action roadmap -->
-            <div class="az-glass-panel">
-              <div class="az-panel-title">Your Action Roadmap</div>
-              <div class="az-roadmap-steps">
-                <div class="az-rm-step">
-                  <div class="az-rm-num">1</div>
-                  <div class="az-rm-text">
-                    <strong>Run 5 problem-discovery interviews</strong>
-                    Talk to students in your target group. Validate the pain before building anything.
-                  </div>
-                </div>
-                <div class="az-rm-step">
-                  <div class="az-rm-num">2</div>
-                  <div class="az-rm-text">
-                    <strong>Build a one-page landing with a waitlist</strong>
-                    Test demand signal with a simple value-proposition page and email capture.
-                  </div>
-                </div>
-                <div class="az-rm-step">
-                  <div class="az-rm-num">3</div>
-                  <div class="az-rm-text">
-                    <strong>Map 3 direct competitors in detail</strong>
-                    Study Validate.io's gaps. Find the angle they're missing for your specific niche.
-                  </div>
-                </div>
-                <div class="az-rm-step">
-                  <div class="az-rm-num">4</div>
-                  <div class="az-rm-text">
-                    <strong>Define your unfair advantage</strong>
-                    What do you know, access, or can build faster than anyone else? Lean in hard.
-                  </div>
-                </div>
-                <div class="az-rm-step">
-                  <div class="az-rm-num">5</div>
-                  <div class="az-rm-text">
-                    <strong>Ship a manual MVP in 2 weeks</strong>
-                    Do it manually (no code) to test willingness to pay before engineering time.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <!-- SWOT Section -->
+        <div id="swot-section" class="az-swot-wrap"></div>
         <div class="az-nav-row">
           <button class="az-btn-restart" onclick="azRestart()">↺ Analyze Another Idea</button>
           <a href="index.html" class="az-btn-next" style="text-decoration:none;">
