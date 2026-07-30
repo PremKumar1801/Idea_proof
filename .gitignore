@@ -8,4 +8,5 @@ Backend/node_modules/
 Backend/.env
 
 # Logs
-*.log
+*.log.DS_Store
+.DS_Store
