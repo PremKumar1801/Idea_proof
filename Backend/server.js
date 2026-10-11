@@ -26,7 +26,7 @@ app.get("/", (req, res) => {
    ANALYZE ROUTE
 ========================================= */
 
-app.post("/analyze", async (req, res) => {
+app.post(["/analyze", "/api/analyze"], async (req, res) => {
 
     try {
 
