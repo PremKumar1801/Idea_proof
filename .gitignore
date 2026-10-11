@@ -1,12 +1,14 @@
+
 # macOS
 .DS_Store
 
-# Node.js
-Backend/node_modules/
+# Node.js dependencies
+node_modules/
 
-# Environment variables
-Backend/.env
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
 
 # Logs
-*.log.DS_Store
-.DS_Store
+*.log

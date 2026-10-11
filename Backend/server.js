@@ -62,7 +62,7 @@ Return ONLY valid JSON, no markdown fences, no extra text. Use this exact schema
                     content: prompt
                 }
             ],
-            model: "llama-3.3-70b-versatile",
+            model: "qwen/qwen3.8-27b",
             temperature: 0.3
         });
 
@@ -86,6 +86,12 @@ Return ONLY valid JSON, no markdown fences, no extra text. Use this exact schema
 
 });
 
-app.listen(3000, () => {
-    console.log("Server Started On Port 3000");
-});
+if (require.main === module) {
+    const PORT = process.env.PORT || 3000;
+
+    app.listen(PORT, () => {
+        console.log(`Server Started On Port ${PORT}`);
+    });
+}
+
+module.exports = app;
