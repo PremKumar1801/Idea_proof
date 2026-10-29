@@ -4,6 +4,9 @@ require("dotenv").config();
 
 const Groq = require("groq-sdk");
 
+const connectDB = require("./config/db");
+const authRoutes = require("./routes/auth");
+
 const app = express();
 
 app.use(cors({
@@ -12,6 +15,12 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
+
+// Ensure database connection for requests
+connectDB().catch((err) => console.error("Database connection failed on startup:", err.message));
+
+// Mount authentication routes on both /auth and /api/auth
+app.use(["/auth", "/api/auth"], authRoutes);
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 

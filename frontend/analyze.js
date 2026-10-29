@@ -130,7 +130,7 @@ window.azAnalyzeClick = async function () {
            SEND DATA TO BACKEND
         ====================================== */
 
-        const response = await fetch("/api/analyze", {
+        const response = await fetch("http://localhost:3000/api/analyze", {
 
             method: "POST",
 
