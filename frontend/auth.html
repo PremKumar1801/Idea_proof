@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In / Register — IdeaProof</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-page-body">
+
+  <!-- Ambient mesh background -->
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+  </div>
+
+  <!-- Topbar -->
+  <header class="az-topbar">
+    <div class="az-topbar-inner">
+      <a href="index.html" class="az-logo">
+        <span class="az-logo-dot" aria-hidden="true"></span>
+        IdeaProof
+      </a>
+
+      <div class="az-topbar-right">
+        <div class="theme-switcher" role="group" aria-label="Theme selection">
+          <button class="theme-btn active" data-theme-target="white" title="White" aria-pressed="true">☀️</button>
+          <button class="theme-btn" data-theme-target="cream" title="Cream" aria-pressed="false">🌾</button>
+          <button class="theme-btn" data-theme-target="dark" title="Dark" aria-pressed="false">🌙</button>
+        </div>
+        <a href="community.html" class="az-back">
+          ← Back to Community
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Auth Container -->
+  <main class="auth-main-wrap">
+    <div class="auth-card" id="auth-card">
+      <div class="auth-card-glow" aria-hidden="true"></div>
+
+      <!-- Header -->
+      <div class="auth-head">
+        <div class="hero-tag">
+          <span class="hero-tag-dot" aria-hidden="true"></span>
+          Founder Community
+        </div>
+        <h1 class="auth-title">Join the <em>Community</em></h1>
+        <p class="auth-sub">Publish your startup ideas, find co-founders, and collaborate with ambitious builders.</p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="auth-tabs" role="tablist">
+        <button type="button" class="auth-tab active" id="tab-login" role="tab" aria-selected="true">
+          Sign In
+        </button>
+        <button type="button" class="auth-tab" id="tab-register" role="tab" aria-selected="false">
+          Create Account
+        </button>
+      </div>
+
+      <!-- Alerts -->
+      <div class="auth-alert auth-alert-error" id="auth-error" role="alert" style="display: none;"></div>
+      <div class="auth-alert auth-alert-success" id="auth-success" role="status" style="display: none;"></div>
+
+      <!-- Form -->
+      <form id="auth-form" class="auth-form" novalidate>
+        <!-- Name (Register Only) -->
+        <div class="az-field-wrap" id="group-name" style="display: none;">
+          <label class="az-field-label" for="auth-name">Full Name</label>
+          <input
+            type="text"
+            id="auth-name"
+            class="az-input"
+            placeholder="e.g. Maya Lin"
+            maxlength="100"
+            autocomplete="name"
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="az-field-wrap">
+          <label class="az-field-label" for="auth-email">Email Address</label>
+          <input
+            type="email"
+            id="auth-email"
+            class="az-input"
+            placeholder="you@university.edu"
+            required
+            autocomplete="email"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="az-field-wrap">
+          <label class="az-field-label" for="auth-password">Password</label>
+          <input
+            type="password"
+            id="auth-password"
+            class="az-input"
+            placeholder="At least 6 characters"
+            required
+            minlength="6"
+            autocomplete="current-password"
+          />
+        </div>
+
+        <!-- Confirm Password (Register Only) -->
+        <div class="az-field-wrap" id="group-confirm" style="display: none;">
+          <label class="az-field-label" for="auth-confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="auth-confirm-password"
+            class="az-input"
+            placeholder="Re-enter your password"
+            autocomplete="new-password"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-primary auth-btn-submit" id="auth-submit-btn">
+          Sign In to IdeaProof
+        </button>
+      </form>
+
+      <div class="auth-footer-note">
+        🔒 Passwords are encrypted with bcrypt. Your email is never exposed on public idea cards.
+      </div>
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

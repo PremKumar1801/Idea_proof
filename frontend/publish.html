@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publish Startup Idea — IdeaProof</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="publish-body">
+
+  <!-- Ambient mesh background -->
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+  </div>
+
+  <!-- Topbar -->
+  <header class="az-topbar">
+    <div class="az-topbar-inner">
+      <a href="index.html" class="az-logo">
+        <span class="az-logo-dot" aria-hidden="true"></span>
+        IdeaProof
+      </a>
+
+      <div class="az-topbar-right">
+        <div class="theme-switcher" role="group" aria-label="Theme selection">
+          <button class="theme-btn active" data-theme-target="white" title="White" aria-pressed="true">☀️</button>
+          <button class="theme-btn" data-theme-target="cream" title="Cream" aria-pressed="false">🌾</button>
+          <button class="theme-btn" data-theme-target="dark" title="Dark" aria-pressed="false">🌙</button>
+        </div>
+        <a href="community.html" class="az-back">
+          ← Back to Community
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Publish Container -->
+  <main class="pub-main-wrap">
+    <div class="pub-container">
+
+      <!-- Unauthenticated Notice (Shown if signed out) -->
+      <div id="pub-auth-guard" class="pub-auth-guard" style="display:none;">
+        <span class="pub-guard-icon" aria-hidden="true">🔒</span>
+        <h2 class="pub-guard-title">Sign In Required</h2>
+        <p class="pub-guard-sub">You must have an IdeaProof account to publish ideas and connect with collaborators.</p>
+        <div class="pub-guard-actions">
+          <a href="auth.html?redirect=publish.html" class="btn-primary">
+            Sign In or Create Account →
+          </a>
+          <a href="community.html" class="btn-ghost">
+            Browse Community Instead
+          </a>
+        </div>
+      </div>
+
+      <!-- Main Form Wrapper -->
+      <div id="pub-form-wrap" class="pub-card">
+        <!-- Header -->
+        <div class="pub-head">
+          <div class="hero-tag">
+            <span class="hero-tag-dot" aria-hidden="true"></span>
+            Co-Founder Discovery
+          </div>
+          <h1 class="pub-title" id="pub-page-title">Publish Your <em>Startup Idea</em></h1>
+          <p class="pub-sub">
+            Share your vision with student builders, find complementary teammates, and start executing together.
+          </p>
+        </div>
+
+        <!-- Success Banner -->
+        <div class="pub-success-banner" id="pub-success" style="display:none;" role="status">
+          <div class="pub-success-icon">✓</div>
+          <div>
+            <h3 class="pub-success-title" id="pub-success-title">Idea Published Successfully!</h3>
+            <p class="pub-success-msg" id="pub-success-msg">Your concept is now live in the startup community feed.</p>
+            <div class="pub-success-links">
+              <a href="community.html" class="btn-primary" id="pub-view-live-btn">View in Community →</a>
+              <button type="button" class="btn-ghost" id="pub-another-btn">Publish Another Idea</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div class="auth-alert auth-alert-error" id="pub-error" style="display:none;" role="alert"></div>
+
+        <!-- The Publish Form -->
+        <form id="publish-form" class="pub-form" novalidate>
+
+          <!-- =============================================
+               SECTION 1: THE STARTUP IDEA
+          ============================================= -->
+          <fieldset class="pub-fieldset">
+            <legend class="pub-legend">
+              <span class="pub-legend-num">1</span>
+              The Startup Idea
+            </legend>
+
+            <!-- Title -->
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                <span>Idea Title *</span>
+                <span class="az-char-count" id="count-title">0 / 100</span>
+              </div>
+              <input
+                type="text"
+                id="pub-title-input"
+                class="az-input"
+                placeholder="e.g. InvoicePulse — Automated Factoring for Freelancers"
+                maxlength="100"
+                required
+              />
+            </div>
+
+            <!-- Two-Column: Industry & Stage -->
+            <div class="pub-2col">
+              <!-- Industry -->
+              <div class="az-field-wrap">
+                <label class="az-field-label" for="pub-industry">Industry / Vertical *</label>
+                <select id="pub-industry" class="az-input pub-select" required>
+                  <option value="">Select an industry...</option>
+                  <option value="AI/ML">AI / Machine Learning</option>
+                  <option value="FinTech">FinTech</option>
+                  <option value="EdTech">EdTech</option>
+                  <option value="HealthTech">HealthTech</option>
+                  <option value="B2B SaaS">B2B SaaS</option>
+                  <option value="E-Commerce">E-Commerce</option>
+                  <option value="CleanTech">CleanTech</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- Stage -->
+              <div class="az-field-wrap">
+                <label class="az-field-label" for="pub-stage">Current Stage *</label>
+                <select id="pub-stage" class="az-input pub-select" required>
+                  <option value="">Select current stage...</option>
+                  <option value="Idea">Just an Idea / Concept</option>
+                  <option value="Building MVP">Building MVP</option>
+                  <option value="Live/Early Users">Live with Early Users</option>
+                  <option value="Scaling">Scaling / Growth</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                <span>Idea Pitch & Solution Description *</span>
+                <span class="az-char-count" id="count-desc">0 / 2000</span>
+              </div>
+              <textarea
+                id="pub-desc-input"
+                class="az-textarea"
+                rows="6"
+                placeholder="Explain the problem you're solving, your target audience, how your solution works, and any traction or experiments completed so far..."
+                maxlength="2000"
+                required
+              ></textarea>
+              <div class="az-field-hint">Tip: Be specific about the core problem and why current alternatives fail.</div>
+            </div>
+          </fieldset>
+
+          <!-- =============================================
+               SECTION 2: FOUNDER PROFILE
+          ============================================= -->
+          <fieldset class="pub-fieldset">
+            <legend class="pub-legend">
+              <span class="pub-legend-num">2</span>
+              Founder Profile
+            </legend>
+
+            <!-- Display Name -->
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                <span>Public Display Name *</span>
+                <span class="az-char-count" id="count-name">0 / 60</span>
+              </div>
+              <input
+                type="text"
+                id="pub-name-input"
+                class="az-input"
+                placeholder="e.g. Priya Sharma"
+                maxlength="60"
+                required
+              />
+              <div class="az-field-hint">Your email is never published. Only this display name appears publicly.</div>
+            </div>
+
+            <!-- Skills -->
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                <span>Your Core Skills (comma-separated)</span>
+              </div>
+              <input
+                type="text"
+                id="pub-skills-input"
+                class="az-input"
+                placeholder="e.g. Product Management, Python, UX Research, Sales"
+              />
+              <div class="az-field-hint">Enter up to 10 skills separated by commas.</div>
+            </div>
+
+            <!-- Interests / Background -->
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                <span>Your Background or Domain Interests</span>
+                <span class="az-char-count" id="count-interests">0 / 150</span>
+              </div>
+              <input
+                type="text"
+                id="pub-interests-input"
+                class="az-input"
+                placeholder="e.g. 3rd year CS student passionate about indie hacking and micro-SaaS"
+                maxlength="150"
+              />
+            </div>
+
+            <!-- Team Size & Teammates Toggle -->
+            <div class="pub-2col">
+              <div class="az-field-wrap">
+                <label class="az-field-label" for="pub-team-size">Current Team Size (including yourself)</label>
+                <input
+                  type="number"
+                  id="pub-team-size"
+                  class="az-input"
+                  min="1"
+                  max="10"
+                  value="1"
+                  required
+                />
+              </div>
+
+              <div class="az-field-wrap">
+                <label class="az-field-label">Existing Teammates?</label>
+                <div class="pub-toggle-box">
+                  <label class="az-toggle">
+                    <input type="checkbox" id="pub-has-teammates" />
+                    <div class="az-toggle-track"></div>
+                    <div class="az-toggle-thumb"></div>
+                  </label>
+                  <span id="pub-teammates-label" class="pub-toggle-text">Working Solo</span>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- =============================================
+               SECTION 3: COLLABORATION NEEDS
+          ============================================= -->
+          <fieldset class="pub-fieldset">
+            <legend class="pub-legend">
+              <span class="pub-legend-num">3</span>
+              Collaborators You Are Looking For
+            </legend>
+
+            <!-- Roles Looking For (Multi-select Pills) -->
+            <div class="az-field-wrap">
+              <label class="az-field-label">Roles or Skills Needed (select all that apply)</label>
+              <div class="pub-roles-grid" id="pub-roles-container">
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="Frontend Developer" />
+                  <span>Frontend Developer</span>
+                </label>
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="Backend Engineer" />
+                  <span>Backend Engineer</span>
+                </label>
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="AI/ML Engineer" />
+                  <span>AI/ML Engineer</span>
+                </label>
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="UI/UX Designer" />
+                  <span>UI/UX Designer</span>
+                </label>
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="Growth/Marketing" />
+                  <span>Growth / Marketing</span>
+                </label>
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="Business/Co-Founder" />
+                  <span>Business / Co-Founder</span>
+                </label>
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="Domain Advisor" />
+                  <span>Domain Advisor</span>
+                </label>
+                <label class="pub-role-pill">
+                  <input type="checkbox" name="roles" value="Other" />
+                  <span>Other Collaborators</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Ideal Collaborator Description -->
+            <div class="az-field-wrap">
+              <div class="az-field-label">
+                <span>Ideal Collaborator Description</span>
+                <span class="az-char-count" id="count-ideal">0 / 400</span>
+              </div>
+              <textarea
+                id="pub-ideal-input"
+                class="az-textarea"
+                rows="3"
+                placeholder="Describe what kind of partner would complement you best (e.g. 'Looking for a senior React/Node engineer who wants to co-found and own technical architecture...')"
+                maxlength="400"
+              ></textarea>
+            </div>
+
+            <!-- Collaboration Style -->
+            <div class="az-field-wrap">
+              <label class="az-field-label" for="pub-collab-style">Collaboration Style</label>
+              <select id="pub-collab-style" class="az-input pub-select">
+                <option value="Flexible/Open to Discussion">Flexible / Open to Discussion</option>
+                <option value="Equity-Based Co-Founder">Equity-Based Co-Founder</option>
+                <option value="Project Partner">Project Partner (MVP / Side Project)</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- Submit Button Row -->
+          <div class="pub-submit-row">
+            <a href="community.html" class="btn-ghost">Cancel</a>
+            <button type="submit" class="btn-primary" id="pub-submit-btn">
+              Publish Idea to Community
+              <span class="btn-arrow" aria-hidden="true">→</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="publish.js"></script>
+</body>
+</html>

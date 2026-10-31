@@ -6,12 +6,14 @@ const Groq = require("groq-sdk");
 
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/auth");
+const ideaRoutes = require("./routes/ideas");
+const interestRoutes = require("./routes/interests");
 
 const app = express();
 
 app.use(cors({
     origin: "*",
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
@@ -21,6 +23,12 @@ connectDB().catch((err) => console.error("Database connection failed on startup:
 
 // Mount authentication routes on both /auth and /api/auth
 app.use(["/auth", "/api/auth"], authRoutes);
+
+// Mount community idea routes on both /ideas and /api/ideas
+app.use(["/ideas", "/api/ideas"], ideaRoutes);
+
+// Mount collaboration interest routes on both /interests and /api/interests
+app.use(["/interests", "/api/interests"], interestRoutes);
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 

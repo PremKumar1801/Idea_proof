@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collaboration Requests — IdeaProof</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="interests-body">
+
+  <!-- Ambient mesh background -->
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+  </div>
+
+  <!-- Topbar -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo" aria-label="IdeaProof home">
+          <span class="logo-dot" aria-hidden="true"></span>
+          IdeaProof
+        </a>
+
+        <!-- Nav links -->
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="analyze.html">Validate Idea</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="publish.html">+ Publish Idea</a></li>
+        </ul>
+
+        <!-- Right cluster -->
+        <div class="nav-right">
+          <div class="theme-switcher" role="group" aria-label="Theme selection">
+            <button class="theme-btn active" data-theme-target="white" title="White" aria-pressed="true">☀️</button>
+            <button class="theme-btn" data-theme-target="cream" title="Cream" aria-pressed="false">🌾</button>
+            <button class="theme-btn" data-theme-target="dark" title="Dark" aria-pressed="false">🌙</button>
+          </div>
+
+          <div class="nav-auth-slot"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Container -->
+  <main class="req-main-wrap">
+    <div class="req-container">
+
+      <!-- Unauthenticated Notice -->
+      <div id="req-auth-guard" class="pub-auth-guard" style="display:none;">
+        <span class="pub-guard-icon" aria-hidden="true">🔒</span>
+        <h2 class="pub-guard-title">Sign In Required</h2>
+        <p class="pub-guard-sub">Please sign in to view collaboration requests sent to your startup ideas.</p>
+        <div class="pub-guard-actions">
+          <a href="auth.html?redirect=interests.html" class="btn-primary">
+            Sign In to Continue →
+          </a>
+        </div>
+      </div>
+
+      <!-- Requests Section -->
+      <div id="req-content-wrap">
+        <div class="req-head">
+          <div class="hero-tag">
+            <span class="hero-tag-dot" aria-hidden="true"></span>
+            Founder Dashboard
+          </div>
+          <h1 class="req-title">Collaboration <em>Requests</em></h1>
+          <p class="req-sub">
+            Review builders and potential co-founders who have reached out to collaborate on your published ideas.
+          </p>
+        </div>
+
+        <!-- Status & Stats -->
+        <div class="req-status-bar" id="req-stats-bar">
+          <span id="req-count-label" class="comm-results-count">Loading requests...</span>
+        </div>
+
+        <!-- Loading State -->
+        <div id="req-loading" class="comm-state-wrap" style="display:none;" aria-live="polite">
+          <div class="comm-spinner" aria-hidden="true"></div>
+          <p class="comm-state-text">Fetching your collaboration requests...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="req-error" class="comm-state-wrap comm-state-error" style="display:none;" role="alert">
+          <span class="comm-state-icon" aria-hidden="true">⚠️</span>
+          <h3 class="comm-state-title">Could not load requests</h3>
+          <p class="comm-state-text" id="req-error-msg">Failed to connect to server.</p>
+          <button type="button" class="btn-primary" id="req-retry-btn">Try Again</button>
+        </div>
+
+        <!-- Empty State -->
+        <div id="req-empty" class="comm-state-wrap" style="display:none;">
+          <span class="comm-state-icon" aria-hidden="true">📫</span>
+          <h3 class="comm-state-title">No Collaboration Requests Yet</h3>
+          <p class="comm-state-text">
+            When other founders or builders express interest in your startup ideas, their messages will appear here.
+          </p>
+          <div class="comm-empty-actions">
+            <a href="community.html" class="btn-ghost">Explore Community Ideas</a>
+            <a href="publish.html" class="btn-primary">Publish Another Idea →</a>
+          </div>
+        </div>
+
+        <!-- Requests Grid -->
+        <div id="req-grid" class="req-grid" role="list"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="auth.js"></script>
+  <script src="interests.js"></script>
+</body>
+</html>

@@ -130,7 +130,18 @@ window.azAnalyzeClick = async function () {
            SEND DATA TO BACKEND
         ====================================== */
 
-        const response = await fetch("http://localhost:3000/api/analyze", {
+        /* --------------------------------------------------
+           Determine API base URL:
+           - On Vercel (or any deployment where frontend and
+             backend share the same origin), use a relative path.
+           - In local development the frontend is typically
+             served by Live Server on a different port (e.g. 5504)
+             while the Express backend runs on port 3000.
+        -------------------------------------------------- */
+        const isLocalDev = location.hostname === "localhost" || location.hostname === "127.0.0.1";
+        const API_BASE   = isLocalDev ? "http://localhost:3000" : "";
+
+        const response = await fetch(API_BASE + "/api/analyze", {
 
             method: "POST",
 
@@ -204,7 +215,7 @@ window.azAnalyzeClick = async function () {
 
         let errorMsg = error.message;
         if (errorMsg.includes("Failed to fetch")) {
-            errorMsg = "Cannot connect to server. Make sure the backend is running on localhost:3000";
+            errorMsg = "Cannot connect to the analysis server. Please check your connection and try again.";
         }
 
         alert("Something went wrong: " + errorMsg);

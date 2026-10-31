@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="white">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Startup Idea Community — IdeaProof</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient mesh background -->
+  <div class="mesh-bg" aria-hidden="true">
+    <div class="mesh-blob mesh-blob-1"></div>
+    <div class="mesh-blob mesh-blob-2"></div>
+    <div class="mesh-blob mesh-blob-3"></div>
+  </div>
+
+  <!-- =============================================
+       NAVBAR
+  ============================================= -->
+  <header>
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="navbar-inner">
+        <!-- Logo -->
+        <a href="index.html" class="logo" aria-label="IdeaProof home">
+          <span class="logo-dot" aria-hidden="true"></span>
+          IdeaProof
+        </a>
+
+        <!-- Nav links -->
+        <ul class="nav-links" role="list">
+          <li><a href="index.html#how-it-works">How It Works</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="analyze.html">Validate Idea</a></li>
+          <li><a href="community.html" class="nav-active">Community</a></li>
+          <li><a href="index.html#pricing">Pricing</a></li>
+        </ul>
+
+        <!-- Right cluster -->
+        <div class="nav-right">
+          <div class="theme-switcher" role="group" aria-label="Theme selection">
+            <button class="theme-btn active" data-theme-target="white" title="White" aria-pressed="true">☀️</button>
+            <button class="theme-btn" data-theme-target="cream" title="Cream" aria-pressed="false">🌾</button>
+            <button class="theme-btn" data-theme-target="dark" title="Dark" aria-pressed="false">🌙</button>
+          </div>
+
+          <a href="publish.html" class="btn-ghost nav-publish-btn" aria-label="Publish your startup idea">
+            + Publish Idea
+          </a>
+
+          <!-- Dynamic auth user / login slot -->
+          <div class="nav-auth-slot"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- =============================================
+       HERO BANNER
+  ============================================= -->
+  <section class="comm-hero">
+    <div class="comm-hero-inner">
+      <div class="hero-tag">
+        <span class="hero-tag-dot" aria-hidden="true"></span>
+        Builder Ecosystem
+      </div>
+
+      <h1 class="comm-hero-title">
+        Build Together,<br />
+        <em>Find Your Co-Founders.</em>
+      </h1>
+
+      <p class="comm-hero-sub">
+        Explore early-stage concepts published by student entrepreneurs and indie hackers. Connect with complementary skillsets to turn ideas into reality.
+      </p>
+
+      <div class="comm-hero-actions">
+        <a href="publish.html" class="btn-primary">
+          Publish Your Idea
+          <span class="btn-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="#browse" class="btn-ghost" id="scroll-to-browse">
+          Browse Ideas ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       DISCOVERY & SEARCH CONTROLS
+  ============================================= -->
+  <section class="comm-section" id="browse">
+    <div class="comm-container">
+
+      <!-- Search & Filters Toolbar -->
+      <div class="comm-toolbar" role="search">
+        <!-- Main Search Bar -->
+        <div class="comm-search-wrap">
+          <span class="comm-search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="comm-search"
+            class="comm-search-input"
+            placeholder="Search startup ideas, problems, or skills..."
+            aria-label="Search ideas"
+          />
+          <button type="button" id="comm-search-clear" class="comm-search-clear" style="display:none;" title="Clear search">✕</button>
+        </div>
+
+        <!-- Filter Selectors Row -->
+        <div class="comm-filters-row">
+          <!-- Industry Filter -->
+          <div class="comm-filter-select-wrap">
+            <select id="filter-industry" class="comm-select" aria-label="Filter by industry">
+              <option value="">All Industries</option>
+              <option value="AI/ML">AI / ML</option>
+              <option value="FinTech">FinTech</option>
+              <option value="EdTech">EdTech</option>
+              <option value="HealthTech">HealthTech</option>
+              <option value="B2B SaaS">B2B SaaS</option>
+              <option value="E-Commerce">E-Commerce</option>
+              <option value="CleanTech">CleanTech</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Stage Filter -->
+          <div class="comm-filter-select-wrap">
+            <select id="filter-stage" class="comm-select" aria-label="Filter by stage">
+              <option value="">All Stages</option>
+              <option value="Idea">Idea Stage</option>
+              <option value="Building MVP">Building MVP</option>
+              <option value="Live/Early Users">Live / Early Users</option>
+              <option value="Scaling">Scaling</option>
+            </select>
+          </div>
+
+          <!-- Roles Needed Filter -->
+          <div class="comm-filter-select-wrap">
+            <select id="filter-role" class="comm-select" aria-label="Filter by required collaborator role">
+              <option value="">All Roles Needed</option>
+              <option value="Frontend Developer">Frontend Developer</option>
+              <option value="Backend Engineer">Backend Engineer</option>
+              <option value="AI/ML Engineer">AI/ML Engineer</option>
+              <option value="UI/UX Designer">UI/UX Designer</option>
+              <option value="Growth/Marketing">Growth / Marketing</option>
+              <option value="Business/Co-Founder">Business / Co-Founder</option>
+              <option value="Domain Advisor">Domain Advisor</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <!-- Sort Selector -->
+          <div class="comm-filter-select-wrap">
+            <select id="filter-sort" class="comm-select" aria-label="Sort order">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+            </select>
+          </div>
+
+          <!-- Quick Toggle: My Ideas Only (if logged in) -->
+          <button type="button" id="btn-filter-my" class="comm-pill-btn" aria-pressed="false" style="display:none;">
+            📁 My Ideas Only
+          </button>
+
+          <!-- Reset Button -->
+          <button type="button" id="btn-reset-filters" class="comm-btn-reset" title="Reset all filters">
+            ↺ Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Feed Status Bar -->
+      <div class="comm-status-bar">
+        <div id="comm-results-count" class="comm-results-count" aria-live="polite">
+          Loading ideas...
+        </div>
+        <div id="comm-active-filters" class="comm-active-filters"></div>
+      </div>
+
+      <!-- Loading State -->
+      <div id="comm-loading" class="comm-state-wrap" style="display:none;" aria-live="polite">
+        <div class="comm-spinner" aria-hidden="true"></div>
+        <p class="comm-state-text">Fetching community ideas...</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="comm-error" class="comm-state-wrap comm-state-error" style="display:none;" role="alert">
+        <span class="comm-state-icon" aria-hidden="true">⚠️</span>
+        <h3 class="comm-state-title">Failed to load ideas</h3>
+        <p class="comm-state-text" id="comm-error-msg">Cannot connect to the server.</p>
+        <button type="button" class="btn-primary" id="comm-retry-btn">Try Again</button>
+      </div>
+
+      <!-- Empty State -->
+      <div id="comm-empty" class="comm-state-wrap" style="display:none;">
+        <span class="comm-state-icon" aria-hidden="true">💡</span>
+        <h3 class="comm-state-title">No ideas found</h3>
+        <p class="comm-state-text">No startup ideas match your current search and filter criteria.</p>
+        <div class="comm-empty-actions">
+          <button type="button" class="btn-ghost" id="comm-clear-filters-btn">Clear Filters</button>
+          <a href="publish.html" class="btn-primary">+ Publish the First Idea</a>
+        </div>
+      </div>
+
+      <!-- Ideas Grid -->
+      <div id="comm-grid" class="comm-grid" role="list"></div>
+
+      <!-- Pagination -->
+      <nav id="comm-pagination" class="comm-pagination" style="display:none;" aria-label="Idea pagination">
+        <button type="button" id="comm-prev-page" class="comm-page-btn" disabled>
+          ← Previous
+        </button>
+        <span id="comm-page-indicator" class="comm-page-indicator">Page 1 of 1</span>
+        <button type="button" id="comm-next-page" class="comm-page-btn" disabled>
+          Next →
+        </button>
+      </nav>
+
+    </div>
+  </section>
+
+  <!-- =============================================
+       IDEA DETAILS MODAL
+  ============================================= -->
+  <div
+    id="idea-modal"
+    class="comm-modal-backdrop"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-idea-title"
+    style="display:none;"
+  >
+    <div class="comm-modal-card" id="idea-modal-card">
+      <!-- Close Button -->
+      <button type="button" class="comm-modal-close" id="modal-close-btn" aria-label="Close dialog">
+        ✕
+      </button>
+
+      <!-- Modal Header -->
+      <div class="comm-modal-header">
+        <div class="comm-modal-badges">
+          <span class="comm-badge comm-badge-industry" id="modal-industry">Industry</span>
+          <span class="comm-badge comm-badge-stage" id="modal-stage">Stage</span>
+          <span class="comm-modal-date" id="modal-date"></span>
+        </div>
+        <h2 class="comm-modal-title" id="modal-idea-title">Idea Title</h2>
+      </div>
+
+      <!-- Modal Body -->
+      <div class="comm-modal-body">
+        <!-- Founder Profile Card -->
+        <div class="comm-modal-founder-box">
+          <div class="comm-modal-avatar" id="modal-founder-avatar">F</div>
+          <div class="comm-modal-founder-info">
+            <div class="comm-modal-founder-name" id="modal-founder-name">Founder Name</div>
+            <div class="comm-modal-team-status" id="modal-team-status">Solo founder (1 person)</div>
+            <div class="comm-modal-interests" id="modal-founder-interests"></div>
+          </div>
+        </div>
+
+        <!-- Founder Skills -->
+        <div class="comm-modal-section" id="modal-skills-section">
+          <h4 class="comm-modal-subhead">Founder Skills</h4>
+          <div class="comm-chips" id="modal-founder-skills"></div>
+        </div>
+
+        <!-- Idea Pitch -->
+        <div class="comm-modal-section">
+          <h4 class="comm-modal-subhead">Startup Pitch & Vision</h4>
+          <p class="comm-modal-desc" id="modal-description"></p>
+        </div>
+
+        <!-- Collaboration Requirements -->
+        <div class="comm-modal-section">
+          <h4 class="comm-modal-subhead">Collaborators Needed</h4>
+          <div class="comm-chips comm-chips-roles" id="modal-looking-for"></div>
+
+          <div class="comm-modal-ideal-box" id="modal-ideal-box">
+            <span class="comm-ideal-label">Ideal Collaborator Profile:</span>
+            <p class="comm-ideal-text" id="modal-ideal-collaborator"></p>
+          </div>
+
+          <div class="comm-modal-style-box" id="modal-style-box">
+            <span class="comm-style-label">Collaboration Style:</span>
+            <span class="comm-style-val" id="modal-collab-style"></span>
+          </div>
+        </div>
+
+        <!-- Feedback Alerts -->
+        <div class="auth-alert auth-alert-error" id="modal-error" style="display:none;" role="alert"></div>
+        <div class="auth-alert auth-alert-success" id="modal-success" style="display:none;" role="status"></div>
+
+        <!-- Express Interest Form (For Authenticated Non-Owners) -->
+        <div class="comm-interest-panel" id="modal-interest-panel" style="display:none;">
+          <h4 class="comm-modal-subhead">Express Interest in Collaborating</h4>
+          <p class="comm-interest-hint">
+            Send a brief introduction to this founder. Your contact details remain private until they review your request.
+          </p>
+          <div class="az-field-wrap">
+            <textarea
+              id="interest-message"
+              class="az-textarea comm-interest-textarea"
+              placeholder="Hi! I have 2 years of experience with React & Node.js and would love to help you build your MVP..."
+              maxlength="500"
+              rows="3"
+            ></textarea>
+            <div class="az-field-hint">Maximum 500 characters</div>
+          </div>
+          <button type="button" class="btn-primary" id="btn-send-interest">
+            Send Collaboration Request →
+          </button>
+        </div>
+
+        <!-- Owner Actions Bar -->
+        <div class="comm-modal-owner-actions" id="modal-owner-actions" style="display:none;">
+          <a href="#" class="btn-ghost" id="modal-edit-btn">✏️ Edit Idea</a>
+          <button type="button" class="comm-btn-deactivate" id="modal-deactivate-btn">
+            🗑️ Deactivate Idea
+          </button>
+        </div>
+
+        <!-- Unauthenticated Banner -->
+        <div class="comm-modal-guest-box" id="modal-guest-box" style="display:none;">
+          <p>Interested in collaborating with this founder?</p>
+          <a href="auth.html?redirect=community.html" class="btn-primary">
+            Sign In to Express Interest →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script src="community.js"></script>
+</body>
+</html>
