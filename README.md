@@ -6,6 +6,8 @@
 
 **An AI-powered platform that helps entrepreneurs validate business ideas before investing time and money.**
 
+url : https://idea-proof-backend-woad.vercel.app/index.html
+
 <br/>
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
